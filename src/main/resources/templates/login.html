@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="login.css"/>
+</head>
+<body>
+<div id="login_frame">
+    <form action="#" th:action="@{/}" th:object="${loginForm}" method="post">
+        <h2 class="text-center">请登录</h2>
+        <p class="text-center" style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+        <p><label class="label_input">用户名</label><input type="text" th:name="userName" id="username" class="text_field" th:field="*{userName}" placeholder="Username"/></p>
+        <p><label class="label_input">密码</label><input type="password" th:name="password" id="password" class="text_field" th:field="*{password}" placeholder="Password"/></p>
+        <div id="login_control">
+            <input type="submit" id="btn_login" value="登录"/>
+<!--            <button type="submit" class="btn btn-primary login-btn" id="btn_login">登录</button>&ndash;&gt;-->
+<!--            <a id="forget_pwd" href="forget_pwd.html">忘记密码？</a>-->
+        </div>
+    </form>
+</div>
+</body>
+</html>
